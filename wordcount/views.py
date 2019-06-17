@@ -19,5 +19,5 @@ def count(request):
         else:
             result[i] += 1
     print(result)
-    sorted(result.items(), key=lambda x:x[1], reverse=True)
-    return render(request, 'count.html', {'count_result': result.items()})
+    result = sorted(result.items(), key=lambda x:x[1], reverse=True)
+    return render(request, 'count.html', {'count_result': result})
